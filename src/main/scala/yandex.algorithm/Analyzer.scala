@@ -2,7 +2,6 @@ package yandex.algorithm
 
 import scala.collection.mutable
 
-
 object Analyzer {
   def buildSiteMap(input: List[Site]): mutable.Map[Int, Int] = {
     val map = mutable.Map(input.sorted(Ordering.by((_: Site).name))

@@ -8,7 +8,9 @@ object Main extends App {
   val robots = RobotFactory.buildRobots(input, input.commonInfo.themeCount)
   val sequences = robots.map(x => x.getSequence)
 
-  println("hello")
+  for (seq <- sequences){
+    println(seq.mkString(" "))
+  }
 }
 
 object RobotFactory {

@@ -14,7 +14,7 @@ class Robot(input: YandexInput, theme: Int) {
     while(time > 0) {
       currentSite = chooseNextSite(currentSite)
       time -= currentSite.secondsToIndex
-      result+=currentSite.name
+      result += currentSite.name
     }
     result.length::result.toList
   }
