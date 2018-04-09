@@ -5,4 +5,5 @@ case class Site (name: Int,
                  themes: List[Int],
                  secondsToIndex: Int,
                  publishingPossibility: Int,
+                 siteInterest: Int,
                  siteRefs: List[Int])

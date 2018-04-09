@@ -12,10 +12,10 @@ object Parser {
     // First string containing common info
     val commonInfoString = strings.head.split(" ").toList
     val commonInfo = CommonInfo(commonInfoString.head.toInt,
-                                commonInfoString(1).toInt,
-                                commonInfoString(2).toInt,
-                                commonInfoString(3).toInt,
-                                commonInfoString(4).toInt)
+      commonInfoString(1).toInt,
+      commonInfoString(2).toInt,
+      commonInfoString(3).toInt,
+      commonInfoString(4).toInt)
 
     // Map of frequencies
     val seq = List.range(1, commonInfo.themeCount + 1)
@@ -38,7 +38,9 @@ object Parser {
         val publishingPossibility = site(1).split(" ").last.toInt
         val siteRefs = site(2).split(" ").tail.map(x => x.toInt).toList
 
-        sites += Site(counter, themesCount,themes,secondsToIndex,publishingPossibility,siteRefs)
+        val interest = themes.map(x => publishingPossibility * siteRefs.length + counter / secondsToIndex * frequenciesMap(x)).sum
+
+        sites += Site(counter, themesCount,themes,secondsToIndex,publishingPossibility, interest, siteRefs)
         counter+=1
       }
     }
